@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: padding-box;
+}
+
+ul {
+    list-style: none;
+}
+
+footer a {
+	color: white;
+	padding: 30px;
+    text-decoration: none;
+    background-color: black;
+  	text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 30px;
+    left: 0; 
+	  right: 0; 
+	  margin-left: auto; 
+	  margin-right: auto; 
+	  width: 700px
+}
+
+.hor ul {
+    display: flex;
+    background-color: #CC0605;
+    justify-content:space-around;
+}
+
+.hor a {
+    display: block;
+    padding: 1em;
+    background-color: #FF2B2B;
+    color: white;
+}
+
+.hor a:hover {
+    background-color: black;
+}
+
+.ver {
+    width: fit-content;
+}
+
+.ver ul {
+    background-color: #FF2B2B;
+    padding: 1em;
+    
+}
+
+.ver a {
+    display: block;
+    padding: 1em;
+    background-color: #CC0605;
+    color: black;
+}
+
+.ver li {
+    margin-bottom: 1em;
+}
+
+.ver li:last-child {
+    margin-bottom: 0em;
+}
+
+.ver a:hover {
+    background-color: pink;
+}
+
+
+.mulHor ul {
+    background-color: #CC0605;
+    position: absolute;
+}
+
+.mulHor ul.topMulHor {
+    margin-left: 5em;
+}
+
+.mulHor li {
+    float: left;
+    height: 100%;
+    position: relative;
+}
+
+.mulHor a {
+    display: block;
+    background-color: #FF2B2B;
+    color: white;
+    padding: 1em;
+    min-width: 5em;
+}
+
+.mulHor a:hover {
+    background-color: black;
+}
+
+.mulHor .subMulHor {
+    display: none;
+}
+
+.mulHor li:hover .subMulHor {
+    display: block;
+}
+
+.mulHor .subMulHorMenu {
+    display: none;
+}
+
+.mulHor li:hover .subMulHorMenu {
+    display: block;
+}
+
+.mulHor .subMulHorMenu div {
+    width: 40em;
+    padding: 2em;
+}
+
+.mulHor .subMulHorMenu img {
+    border: 2px solid red;
+}
+
+div.rep {
+    margin: 2em;
+    padding: 2em;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+   
+}
+
+ul.soc {
+    position: fixed;
+    right: 0;
+    background-color: #FF2B2B;
+    padding: 1em;
+}
