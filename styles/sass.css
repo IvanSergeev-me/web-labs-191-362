@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+.link-2, .link-1 {
+  border: 1px solid blue;
+}
+
+.sass-color {
+  color: red;
+  font-size: 2em;
+}
+.sass-color span {
+  color: green;
+}
+
+.difference {
+  justify-content: center;
+  display: flex;
+}
+.difference .diff-col {
+  width: 20%;
+  background: rgba(255, 0, 0, 0.1);
+}
+.difference .diff-col span {
+  font-weight: 600;
+}
+
+.more-dif p {
+  text-align: center;
+}
+.more-dif > p {
+  color: red;
+}
+.more-dif:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.square-wrapper {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+.square-wrapper .square {
+  width: 150px;
+  height: 150px;
+  transition-property: all;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #42d8ff 0%, #4820ff 100%, #3300ff 100%);
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.square-wrapper .square:hover {
+  width: 250px;
+  height: 250px;
+  transition: 0.4s;
+}
+
+.patterns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-1 {
+  font-size: 2em;
+  margin: 20px 20px;
+}
+
+.link-2 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.math {
+  background: pink;
+  width: 31.25%;
+  height: 100px;
+  margin-left: 34.375%;
+}
+
+.map1 {
+  background-color: #FA6ACC;
+  font-size: 2em;
+}
+.map1 + span {
+  color: green;
+  font-size: 2em;
+}
+
+.map2 {
+  background-color: #F02A52;
+  font-size: 2em;
+}
+
+.map3 {
+  background-color: #09A6E4;
+  font-size: 2em;
+}
+
+.colormodule {
+  background-color: #ff6666;
+  color: aqua;
+  font-size: 2em;
+}

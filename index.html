@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Prepros ЛР10 Сергеев</title>
+	<link rel="stylesheet" type="text/css" href="styles/sass.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="sass-color">
+		Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Neque, animi? Explicabo quis <span>Первое преимущество прероцессоров - вложенность</span> , libero deleniti assumenda fugit dolore, eveniet ratione aliquid tempora quod quisquam molestias minima quaerat est.
+	</div>
+	<div class="difference">
+		<pre class="diff-col">
+			<span>SCSS</span>
+				.sass-color{
+					color:red;
+					font-size:2em;
+					span{
+						color: green;
+					}
+				}
+		</pre>
+		<pre class="diff-col">
+			<span>CSS</span>
+				.sass-color {
+				  color: red;
+				  font-size: 2em;
+				}
+				.sass-color span {
+				  color: green;
+				}
+		</pre>
+	</div>
+	<div class="more-dif">
+		<p>Заголовок вложенности 0</p>
+		<div>
+			<p>Заголовок вложенности 1</p>
+			<div>
+				<p>Заголовок вложенности 2, а еще свойство hover тут реализовано с помощью оператора "&"</p>
+			</div>
+		</div>
+	</div>
+	<div class="square-wrapper">
+		<div class="square">Фон задан переменной</div>
+	</div>
+	<div class="square-wrapper">
+		<div class="square">Фон задан переменной</div>
+	</div>
+	<div class="patterns">
+		<a class="link-1" href="#">HERE IS LINK 1</a>
+		<a class="link-2" href="#">Свойства этой ссылки реализованы с помощью @include миксином, который принимает 2 параметра - размер шрифта и жирность шрифта</a>
+		<h1>Синий бордер реализован с помощью шаблона % и @extend</h1>
+	</div>
+	<div class="math">Математика!
+		<pre>
+			.math{
+				background: pink;
+				width: 300px / 960px * 100%;
+				height: 200px * 0.5;
+				margin-left: (100% - (300px / 960px * 100%))/2;
+			}
+		</pre>	
+	</div>
+	<div class="map1">
+		<span>Бекграунд этого блока задан с помощью map get-map</span>
+	</div>
+	<span>Цвет этого текста задан с помощью "+"</span>
+	<div class="map2">
+		Бекграунд этого блока задан с помощью map get-map
+	</div>
+	<div class="map3">
+		Бекграунд этого блока задан с помощью map get-map
+	</div>
+	<div class="colormodule">Модуль Color</div>
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
+</html>
