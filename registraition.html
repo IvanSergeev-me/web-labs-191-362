@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/index.css">
+    <title>Регистрация</title>
+</head>
+<body>
+    <header class="header-container">
+     
+      <div class="author__header">
+        <h1 class="game-name__header">Dungeon Master</h1>
+         Designed By: Sergeev Ivan, 191-362, V2
+      </div>
+      <div>
+        <object class="logo-container"
+          type="img/97776394.svg.jpg"
+          data="SvgImg.svg"
+          width="150"
+          height="150"
+        >
+          <img class="logo-container__img" src="img/97776394.svg.jpg" width="150" height="150" alt="logo" />
+        </object>
+      </div>
+    </header>
+
+      <form action="">
+
+          <legend class="common-header-second">Поля, помеченные символом "*" обязательны для заполнения</legend>
+        <div>
+            <label for="">Имя*</label>
+        <input required type="text" id="name" name="user_name" placeholder="Имя">
+        </div>
+        <div>
+            <label for="">Фамилию*</label>
+            <input required type="text" id="name" name="user_name" placeholder="Фамилия">
+        </div>
+        <div>
+            <label for="">Отчество:</label>
+            <input type="text" id="name" name="user_name" placeholder="Отчество">
+        </div>
+        <div>
+            <label for="">e-mail*</label>
+            <input required type="email" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" id="phone" name="user_phone" placeholder="e-mail" title="example@mail.com">
+        </div>
+        <div>
+            <label for="">Логин*</label>
+            <input required type="tel" pattern="[ A-Za-z]{6,12}" id="phone" name="user_phone" placeholder="Логин" title="Логин должен содержать только буквы латинского алфавита в верхнем или нижнем регистре и длиной не менее 6 символов и не более 12"> 
+        </div>
+        <div>
+            <label for="">Пароль*</label>
+            <input required type="text" id="phone" name="user_phone" placeholder="Пароль">
+        </div>
+        <div>
+            <button class="container__button" type="submit" value="Отправить">Зарегистрироваться</button>
+        </div>
+      </form>
+      
+</body>
+</html>

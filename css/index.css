@@ -1,0 +1,301 @@
+
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+span::selection{
+    color: red;
+}
+p::selection{
+    color: red;
+}
+label::selection{
+    color: #EF0097;
+}
+body {
+   
+ 
+    
+  background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(19,121,9,1) 48%, rgba(143,31,0,1) 100%);
+    font-family: Roboto, sans-serif;
+}
+
+.header-container {
+    padding: 0 10%;
+     user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: head;
+    font-size: 1em;
+    font-weight: 300;
+    background-color: #00FF00;
+    color: rgb(252, 252, 252);
+}
+.game-name__header{
+    letter-spacing: 0.15em;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+footer {
+    background-color: #ae00f394;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-container__item {
+    padding: 10px;
+} 
+.logo-container__img{
+ border-radius: 50%;
+ width: 200px;
+ object-fit: contain;
+ user-select: none;
+}
+.logo-container{
+   
+ user-select: none;
+}
+form {
+    margin: 2em 0;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+form div{
+    display:  flex;
+    flex-direction: column;
+  
+    align-items: center;
+}
+form div label{
+    color: white;
+    font-weight: 600;
+}
+.container__form {
+    margin-top: 100px;
+    align-items: center;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.container{
+    font-size: 1em;
+}
+.container__wrapper{
+ padding: 3% 10%;
+}
+input {
+    width: 20%;
+    padding: 1em;
+    border: 1px solid #EF0097;
+    border-radius: 1em;
+    margin: 0.5em 0;
+    font-size: 1em;
+    background: #DCDCDC;
+}
+.common-header-second{
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: all;
+}
+.common-header-second:hover{
+    transition: 0.5s;
+    transform: translate(-50px);
+}
+.describe{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+}
+.describe__text-block{
+    margin-top: 1.5em;
+
+    color: white;
+
+}
+.container__button {
+    border-radius: 1em;
+    width: 20%;
+    padding: 1em;
+    margin: 0.5em 0;
+    background:  #EF0097;
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #EF0097;
+    background: black;
+    color: white;
+    transition-property: all;
+
+}
+.rocket-backgound{
+    background-image: url("../img/dino-kop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.container__button:hover{
+    transition: 0.3s;
+    border: 1px solid #000000;
+}
+.container__button a {
+    color: white!important;
+}
+.select-text{
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.animated-rocket{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top:0;
+    left:0;
+    animation: fly 10s ease-in-out infinite;
+}
+.animated-rocket__img{
+    width: 100%;
+}
+.main-game{
+    display: flex;
+   
+    padding: 5em;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    position: relative;
+    margin : 1em 0;
+}
+.main-game__menu{
+    color: white;
+    top:50%;
+
+}
+.main-game__menu ul li{
+    
+transition-property: all;
+ margin-top: 1em;
+ cursor: pointer;
+ user-select: none;
+}
+.main-game__menu ul li:hover{
+    transition: 0.2s;
+     color: silver;
+}
+.animated-objects{
+    margin-left: 50%;
+ display: flex;
+ flex-direction: column;
+}
+.animated-objects img{
+  width: 75px;
+}
+.rocket{
+    animation: a 2s ease-in-out infinite;
+}
+.alien{
+    animation: b 2s ease-in-out infinite;
+}
+.star{
+    animation: c 2s ease-in-out infinite;
+}
+.planet{
+    animation: d 2s ease-in-out infinite;
+}
+
+@media screen and (max-width: 900px) {
+   .container__wrapper{
+        padding: auto 0;
+   }
+    .header-container{
+        padding:auto 0;
+    }
+    .container__button{
+        width: 100%;
+    }
+    input{
+        width: 100%;
+    }
+    .logo-container__img{
+        width: 200px;
+    }
+}
+@media screen and (max-width: 400px) {
+.header-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@keyframes fly {
+ 0%{ left: 0; top:0;}
+ 25%{ left: 100%; top:90%;}
+  50%{ left: 0; top:90%;}
+  75%{left: 90%; top:0;}
+  100%{ left: 0; top:0;}
+}
+@keyframes a{
+    20%{margin-left: -20px;}
+    80%{margin-left: 20px;}
+    100%{margin-left: 0;}
+}
+@keyframes b{
+    30%{transform: rotate(90deg);}
+    100%{transform: rotate(0);}
+}
+@keyframes c{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes d{
+     20%{margin-top: -20px;}
+    80%{margin-top: 20px;}
+    100%{margin-top: 0;}
+}

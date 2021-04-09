@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/popups.css">
+    <title>Игра</title>
+
+</head>
+<body>
+    <header class="header-container">
+     
+      <div class="author__header">
+        
+        <h1 class="game-name__header">Dungeon Master</h1>
+         Designed By: Sergeev Ivan, 191-362, V2
+      </div>
+      <div>
+        <object class="logo-container"
+          type="img/97776394.svg.jpg"
+          data="SvgImg.svg"
+          width="150"
+          height="150"
+        >
+          <img class="logo-container__img" src="img/97776394.svg.jpg" width="150" height="150" alt="logo" />
+        </object>
+      </div>
+    </header>
+  <section class="container">
+  
+
+    <div class="container__wrapper">
+        <h2 class="common-header-second">Игра</h2>
+        <div class="main-game">
+          <div class="main-game__menu">
+            <p>Меню</p>
+            <ul>
+              <li>
+                Начать новую игру
+              </li>
+               <li>
+                Загрузить сохранение
+              </li>
+               <li>
+                Посмотреть таблицу очков
+              </li>
+               <li>
+                Настройки
+              </li>
+               <li>
+                Выход
+              </li>
+            </ul>
+          </div>
+          <div class="animated-objects">
+            <img  class="planet" src="img/bird.png" alt="planet">
+            <img  class="star" src="img/dinonorm.jpeg" alt="star">
+            <img  class="alien" src="img/Dinoice_age.png" alt="alien">
+            <img  class="rocket" src="img/tank.png" alt="rocket">
+          </div>
+        </div>
+        <h2 class="common-header-second">Очков: 0</h2>
+      </div>
+    </section>
+
+    <div class="popup_login" id="popup_new_order">
+    <a href="#" class="popup_login_area">
+      
+    </a>
+    <div class="popup_login_body">
+      <div class="popup_login_content">
+        <a href="#" class="popup_login_close">X</a>
+        <p class="popup-login-title">
+          Подсказка
+        </p>
+        <form action="#" method="POST" class="form_popup_login" id="form_popup_login">
+           <p class="popup-login-title">
+          Чтобы играть нажмите "новая игра".
+        </p> <p class="popup-login-title">
+          Чтобы играть нажимайте на стрелочки.
+        </p> <p class="popup-login-title">
+          Чтобы сохранить игру, нажмите F5 во время боя.
+        </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
