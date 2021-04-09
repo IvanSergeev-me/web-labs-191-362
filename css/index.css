@@ -38,22 +38,12 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-span::selection{
-    color: brown;
-}
-p::selection{
-    color: brown;
-}
-label::selection{
-    color: #EF0097;
-}
 body {
    
- 
-    
+ font-family: Roboto, sans-serif;
   background: rgb(0,0,0);
-background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(19,121,9,1) 48%, rgba(143,31,0,1) 100%);
-    font-family: Roboto, sans-serif;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(66,166,2,1) 100%);
+    
 }
 
 .header-container {
@@ -95,8 +85,17 @@ footer {
  width: 200px;
  object-fit: contain;
  user-select: none;
+ transition-property: all;
+ cursor: pointer;
 
 }
+.logo-container__img:hover{
+transition: 0.3s;
+width: 300px;
+object-fit: cover;
+border-radius: 0;
+}
+
 .logo-container{
    
  user-select: none;
@@ -188,6 +187,16 @@ input {
     background-size: contain;
 
 }
+
+span::selection{
+    color: brown;
+}
+p::selection{
+    color: brown;
+}
+label::selection{
+    color: #EF0097;
+}
 .egg-backgound{
     background-image: url("../img/egg.jpg");
     background-repeat: no-repeat;
@@ -222,14 +231,16 @@ input {
    
     padding: 5em;
     width: 100%;
-    height: 300px;
-    background-color: black;
+    height: 600px;
+    background-color: rgba(0,0,0,0.8);
+    background-image: url("../img/raaar.png");
     position: relative;
     margin : 1em 0;
 }
 .main-game__menu{
     color: white;
     top:50%;
+    font-size: 2em;
 
 }
 .main-game__menu ul li{
@@ -238,32 +249,41 @@ transition-property: all;
  margin-top: 1em;
  cursor: pointer;
  user-select: none;
+ white-space: nowrap;
+
 }
 .main-game__menu ul li:hover{
     transition: 0.2s;
      color: silver;
 }
 .animated-objects{
+    height: 300px;
     margin-left: 50%;
  display: flex;
+ justify-content: space-between;
  flex-direction: column;
 }
 .animated-objects img{
-  width: 75px;
+  width: 95px;
 }
-.rocket{
-    animation: a 2s ease-in-out infinite;
+.tank{
+    animation: leftright 2s ease-in-out infinite;
 }
-.alien{
+.land{
     animation: b 2s ease-in-out infinite;
 }
-.star{
+.dino{
     animation: c 2s ease-in-out infinite;
 }
-.planet{
+.ptero{
     animation: d 2s ease-in-out infinite;
 }
+@media screen and (max-width: 1200px) {
+.main-game__menu{
+   font-size: 1em;
 
+}
+}
 @media screen and (max-width: 900px) {
    .container__wrapper{
         padding: auto 0;
@@ -279,6 +299,11 @@ transition-property: all;
     }
     .logo-container__img{
         width: 200px;
+    }
+}
+@media screen and (max-width: 750px) {
+.main-game{
+    flex-direction: column;
     }
 }
 @media screen and (max-width: 400px) {
@@ -299,18 +324,19 @@ transition-property: all;
   85%{left: 90%; top:0;}
   100%{ left: 0; top:0;}
 }
-@keyframes a{
-    20%{margin-left: -20px;}
-    80%{margin-left: 20px;}
+@keyframes leftright{
+    20%{margin-left: -50px;}
+    80%{margin-left: 50px;}
     100%{margin-left: 0;}
 }
 @keyframes b{
-    30%{transform: rotate(90deg);}
-    100%{transform: rotate(0);}
+     0%{opacity: 1;}
+    100%{opacity: 0;}
 }
 @keyframes c{
-    0%{opacity: 1;}
-    100%{opacity: 0;}
+    0%{width: 100%;}
+    50%{opacity:200%;}
+    100%{width: 100%;}
 }
 @keyframes d{
      20%{margin-top: -20px;}
