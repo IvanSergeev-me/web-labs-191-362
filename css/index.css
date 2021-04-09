@@ -39,10 +39,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 span::selection{
-    color: red;
+    color: brown;
 }
 p::selection{
-    color: red;
+    color: brown;
 }
 label::selection{
     color: #EF0097;
@@ -60,13 +60,15 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(19,121,9,1) 48%, rgba(
     padding: 0 10%;
      user-select: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     grid-area: head;
     font-size: 1em;
     font-weight: 300;
-    background-color: #00FF00;
+    
+background: rgb(82,24,0);
+background: linear-gradient(90deg, rgba(82,24,0,1) 0%, rgba(19,121,9,1) 48%, rgba(255,244,0,1) 100%);
     color: rgb(252, 252, 252);
 }
 .game-name__header{
@@ -93,6 +95,7 @@ footer {
  width: 200px;
  object-fit: contain;
  user-select: none;
+
 }
 .logo-container{
    
@@ -129,7 +132,7 @@ form div label{
  padding: 3% 10%;
 }
 input {
-    width: 20%;
+    width: 50%;
     padding: 1em;
     border: 1px solid #EF0097;
     border-radius: 1em;
@@ -144,10 +147,13 @@ input {
     cursor: pointer;
     user-select: none;
     transition-property: all;
+
 }
 .common-header-second:hover{
     transition: 0.5s;
-    transform: translate(-50px);
+     
+     
+
 }
 .describe{
     display: flex;
@@ -163,21 +169,27 @@ input {
 }
 .container__button {
     border-radius: 1em;
-    width: 20%;
+    width: 50%;
     padding: 1em;
     margin: 0.5em 0;
     background:  #EF0097;
     font-weight: 600;
     font-size: 1em;
     text-align: center;
-    border: 1px solid #EF0097;
-    background: black;
+    border: 1px solid brown;
+    background: green;
     color: white;
     transition-property: all;
 
 }
-.rocket-backgound{
-    background-image: url("../img/dino-kop.png");
+.dino-backgound{
+    background-image: url("../img/raaar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.egg-backgound{
+    background-image: url("../img/egg.jpg");
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -185,6 +197,7 @@ input {
 .container__button:hover{
     transition: 0.3s;
     border: 1px solid #000000;
+    transform: translate(10px);
 }
 .container__button a {
     color: white!important;
@@ -193,7 +206,7 @@ input {
     font-weight: 600;
     letter-spacing: 0.1em;
 }
-.animated-rocket{
+.animated-dino{
     position: absolute;
     width: 100px;
     height: 100px;
@@ -201,7 +214,7 @@ input {
     left:0;
     animation: fly 10s ease-in-out infinite;
 }
-.animated-rocket__img{
+.animated-dino__img{
     width: 100%;
 }
 .main-game{
@@ -276,9 +289,14 @@ transition-property: all;
 }
 @keyframes fly {
  0%{ left: 0; top:0;}
- 25%{ left: 100%; top:90%;}
-  50%{ left: 0; top:90%;}
-  75%{left: 90%; top:0;}
+ 10%{ left: 90%; top:20%;}
+  20%{ left: 0; top:20%;}
+  30%{left: 90%; top:0;}
+  45%{ left: 0; top:0;}
+  
+ 55%{ left: 90%; top:90%;}
+  65%{ left: 0; top:90%;}
+  85%{left: 90%; top:0;}
   100%{ left: 0; top:0;}
 }
 @keyframes a{
