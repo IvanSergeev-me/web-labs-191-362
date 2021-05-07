@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme" rel="stylesheet" href="css/main.css">
+    <link id="theme" rel="stylesheet" href="css/nullifier.css">
+    <title>Kanban Sergeev</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <h1>Канбан</h1>
+            <div class="theme">
+                <label for="switch" class="theme__text">Темная тема</label>
+                <input type="checkbox" id="switch" name="theme">
+            </div>
+        </div>
+
+        <div class="create__wrapper">
+            <lable for="create_new_card" class="create__header">Добавить новую задачу</lable>
+            <div class="create__input_field">
+                <input id="create_new_card" type="text" class="create__description">
+                <button class="create__button">Добавить</button>
+            </div>
+            
+        </div>
+
+    </header>
+
+
+    <div class="columns">
+        <div class="column">
+            <h2 class="column__header">План (1)</h2>
+                <div class="task">
+                    <div class="task__wrapper">
+                        <h3 class="task__header">Задача №4</h3>
+                        <p class="task__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, iste quam? Fugit repellendus quidem explicabo sint iure quia optio doloremque!</p>
+                    </div>
+                    <div class="task__buttons">
+                        <button class="task__button">Редактировать</button>
+                    <button class="task__button">Удалить</button>
+                    </div>
+                </div>
+                
+        </div>
+
+        <div class="column">
+            <h2 class="column__header">В работе (2)</h2>
+
+            <div class="task">
+                <div class="task__wrapper">
+                    <h3 class="task__header">Задача №3</h3>
+                    <p class="task__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, iste quam? Fugit repellendus quidem explicabo sint iure quia optio doloremque!</p>
+                </div>
+                <div class="task__buttons">
+                    <button class="task__button">Редактировать</button>
+                    <button class="task__button">Удалить</button>
+                </div>
+            </div>
+
+            <div class="task">
+                <div class="task__wrapper">
+                    <h3 class="task__header">Задача №2</h3>
+                    <p class="task__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, iste quam? Fugit repellendus quidem explicabo sint iure quia optio doloremque!</p>
+                </div>
+                <div class="task__buttons">
+                    <button class="task__button">Редактировать</button>
+                    <button class="task__button">Удалить</button>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+        <div class="column">
+            <h2 class="column__header">Готово (1)</h2>
+
+            <div class="task">
+                <div class="task__wrapper">
+                    <h3 class="task__header">Задача №1</h3>
+                    <p class="task__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, iste quam? Fugit repellendus quidem explicabo sint iure quia optio doloremque!</p>
+                </div>
+
+    <script>
+    var checkbox = document.getElementById("switch");
+
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
+             document.getElementById("theme").setAttribute("href", "css/dark.css");
+        } else {
+             document.getElementById("theme").setAttribute("href", "css/main.css");
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/*$border_color: rgba(255, 128, 255, 0.795);*/
+body {
+  background-color: #282828;
+  font-family: 'Roboto', sans-serif!important;
+}
+
+.header {
+  margin: 0 10%;
+  margin-top: 1em;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme__text {
+  color: #9b9999;
+  font-size: 1.2em;
+}
+
+.create__header {
+  margin-bottom: 1%;
+  color: rgba(0, 128, 255, 0.795);
+  font-weight: bold;
+}
+.create__header {
+  display: block;
+}
+.create__input_field {
+ 
+  display: flex;
+  align-items: center;
+}
+.create__description {
+  border: 1px #000 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #9b9999;
+  box-shadow: none;
+  padding: 1em;
+  background-color: rgba(24, 24, 24, 0.15);
+  width: 400px;
+  color: rgba(0, 128, 255, 0.795);
+}
+.create__button {
+  border: 1px #000 solid;
+  border-radius: 1em;
+  box-shadow: 0 0 5px #9b9999;
+  box-shadow: none;
+  background-color: rgba(26, 26, 26, 0.795);
+  color: #fff;
+  font-size: large;
+  margin-left: 1em;
+  width: 100px;
+  text-align: center;
+  padding: 0.5em;
+}
+h1 {
+  color: #9b9999;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+  padding: 0 10%;
+  flex-wrap: wrap;
+}
+
+.column {
+  border: 1px #000 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #9b9999;
+  word-wrap: break-word;
+  width: 30%;
+  min-width: 100px;
+  padding: 1em;
+  cursor: pointer;
+}
+.column__header {
+  text-align: left;
+  
+  color: #9b9999;
+}
+
+.task {
+  background-color: #131313;
+  margin-top: 1.5em;
+  padding: 1em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: auto;
+}
+.task__header {
+  text-align: left;
+}
+.task__buttons {
+  color: #9b9999;
+  display: flex;
+  justify-content: space-between;
+}
+.task__buttons button {
+  border: 1px #000 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #9b9999;
+  margin-top: 2em;
+  width: 45%;
+  padding: 0.5em;
+  background-color: rgba(26, 26, 26, 0.795);
+  cursor: pointer;
+  color:white;
+  font-weight: 600;
+  white-space:nowrap;
+}
+.task__buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.795);
+}
+@media (max-width:1300px) {
+  .column{
+    width: 48%;
+    margin-top: 2em;
+  }
+  
+}
+@media (max-width:786px) {
+  .column{
+    width: 100%;
+    margin-top: 2em;
+  }
+  .columns{
+    padding:  0 1em;
+    margin-top: 0em;
+  }
+  .header{
+    padding:  0 1em;
+    margin: 0;
+    margin-top: 1em;
+  }
+  
+}
