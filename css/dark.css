@@ -25,18 +25,19 @@ body {
 
 .create__header {
   margin-bottom: 1%;
-  color: rgba(0, 128, 255, 0.795);
+  color: white;
   font-weight: bold;
 }
 .create__header {
   display: block;
 }
 .create__input_field {
- 
+
   display: flex;
   align-items: center;
 }
 .create__description {
+  color:white;
   border: 1px #000 solid;
   border-radius: 5px;
   box-shadow: 0 0 5px #9b9999;
@@ -44,7 +45,7 @@ body {
   padding: 1em;
   background-color: rgba(24, 24, 24, 0.15);
   width: 400px;
-  color: rgba(0, 128, 255, 0.795);
+  
 }
 .create__button {
   border: 1px #000 solid;
