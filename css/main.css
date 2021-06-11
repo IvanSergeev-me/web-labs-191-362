@@ -1,0 +1,75 @@
+
+
+.row > div{
+  text-align: center;
+}
+
+.row > div > p{
+  margin: 0;
+}
+
+.row > div:nth-child(2){
+  background-color: lightgray;
+}
+
+center{
+  text-align: center;
+}
+
+h1{
+	font-size: 2.5em;
+	text-align: center;
+}
+
+h2{
+	font-size: 2em;
+}
+
+*:focus{
+	outline: 2px solid red !important;
+	
+}
+th, td {
+  border-bottom: 1px solid red!important;
+}
+.image-lake{
+  object-fit: contain;
+  width: 100%;
+  border:1px solid black;
+}
+.body-wrapper{
+  background-color: wheat;
+}
+
+@media print {
+   #addResp{
+     display: none;
+   }
+
+   h5{
+     font-size: 2em;
+     text-align: center;
+   }
+
+   p{
+     font-size: 1.15em;
+	 text-align: left;
+   }
+
+   tr{
+     border: 2px solid black;
+     box-shadow: none;
+   }
+ 
+	.row > div:nth-child(2){
+		background-color: #fff;
+		border: 1px solid black;
+		box-shadow: none;
+	}
+	
+	
+	@page{
+		size: A4;
+		margin: 1cm;
+	}
+ }
