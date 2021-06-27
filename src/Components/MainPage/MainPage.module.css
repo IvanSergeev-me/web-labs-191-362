@@ -1,0 +1,31 @@
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+    padding: 0 10%;
+    flex-wrap: wrap;
+}
+  
+  @media (max-width:1300px) {
+    .column{
+      width: 48%;
+      margin-top: 2em;
+    }
+    
+  }
+  @media (max-width:786px) {
+    .column{
+      width: 100%;
+      margin-top: 2em;
+    }
+    .columns{
+      padding:  0 1em;
+      margin-top: 0em;
+    }
+    .header{
+      padding:  0 1em;
+      margin: 0;
+      margin-top: 1em;
+    }
+    
+  }

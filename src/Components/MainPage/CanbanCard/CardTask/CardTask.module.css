@@ -1,0 +1,34 @@
+.task {
+    background-color: rgba(30, 143, 255, 0.15);
+    margin-top: 1.5em;
+    padding: 1em;
+    color: #077ff8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: auto;
+}
+.task__header {
+    text-align: left;
+}
+.task__buttons {
+    color: #9b9999;
+    display: flex;
+    justify-content: space-between;
+}
+.task__buttons button {
+    border: 2px rgba(0, 128, 255, 0.795) solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #9b9999;
+    margin-top: 2em;
+    width: 45%;
+    padding: 0.5em;
+    background-color: rgba(0, 128, 255, 0.795);
+    cursor: pointer;
+    color:white;
+    font-weight: 600;
+    white-space:nowrap;
+}
+.task__buttons button:hover {
+    background-color: rgba(101, 177, 253, 0.795);
+}

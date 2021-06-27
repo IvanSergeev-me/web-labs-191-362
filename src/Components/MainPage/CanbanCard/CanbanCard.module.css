@@ -1,0 +1,17 @@
+.column {
+    border: 2px rgba(0, 128, 255, 0.795) solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #9b9999;
+    word-wrap: break-word;
+    width: 30%;
+    min-width: 100px;
+    padding: 1em;
+    cursor: pointer;
+  }
+  .column__header {
+    text-align: left;
+    
+    color: #9b9999;
+  }
+  
+ 
