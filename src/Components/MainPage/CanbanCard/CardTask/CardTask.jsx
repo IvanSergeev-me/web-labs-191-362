@@ -20,6 +20,12 @@ const CardTask = (props) =>{
             <div className={isLight?s.task__wrapper:`${s.task__wrapper} ${s.d_task__wrapper}`}>
                 <h3 className={isLight?s.task__header:`${s.task__header} ${s.d_task__header}`}>Задача №{props.id}</h3>
                 <p className={isLight?s.task__description:`${s.task__description} ${s.d_task__description}`}>{props.taskText}</p>
+                {props.cardType!=="inPlan"?<div>
+                    <h3 className={isLight?s.task__header:`${s.task__header} ${s.d_task__header}`}>Время начала</h3>
+                    <p className={isLight?s.task__description:`${s.task__description} ${s.d_task__description}`}>{props.taskCreationDate}</p>
+                    <h3 className={isLight?s.task__header:`${s.task__header} ${s.d_task__header}`}>Ответственный</h3>
+                    <p className={isLight?s.task__description:`${s.task__description} ${s.d_task__description}`}>{props.taskExecutor}</p>
+                </div>:null}
             </div>
             <div className={isLight?s.task__buttons:`${s.task__buttons} ${s.d_task__buttons}`}>
                 <button className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Редактировать</button>
