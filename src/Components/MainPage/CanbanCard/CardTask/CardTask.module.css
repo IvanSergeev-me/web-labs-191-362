@@ -8,6 +8,10 @@
     justify-content: space-between;
     cursor: auto;
 }
+.d_task{
+    color: white;
+    background-color: rgb(31, 31, 31);
+}
 .task__header {
     text-align: left;
 }
@@ -16,7 +20,7 @@
     display: flex;
     justify-content: space-between;
 }
-.task__buttons button {
+.task__button{
     border: 2px rgba(0, 128, 255, 0.795) solid;
     border-radius: 5px;
     box-shadow: 0 0 5px #9b9999;
@@ -29,6 +33,15 @@
     font-weight: 600;
     white-space:nowrap;
 }
-.task__buttons button:hover {
+
+.task__button:hover {
     background-color: rgba(101, 177, 253, 0.795);
+}
+.d_task__button{
+    border-color: black;
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+.d_task__button:hover{
+    background-color: black;
 }

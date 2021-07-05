@@ -3,13 +3,18 @@ import s from './CanbanCard.module.css';
 import CardTask from './CardTask/CardTask';
 
 const CanbanCard = (props) =>{
-    let id= props.id
-    let cardType=props.cardType
+    let id= props.id;
+    let cardType=props.cardType;
    
-    let tasks=props.tasks
-    let name = props.name
+    let tasks=props.tasks;
+    let name = props.name;
+    let appTheme = props.appTheme;
+    //className={props.appTheme==="light"?s.mainPage:`${s.mainPage} ${s.d_mainPage}`
     let moveTask = (cardIdToMove, taskId) =>{
         props.moveTask(id, cardIdToMove, taskId)
+    }
+    let deleteTask = (taskId) =>{
+        props.deleteTask(id, taskId)
     }
     let tasksList = tasks.map(t=>{
         return(
@@ -21,12 +26,14 @@ const CanbanCard = (props) =>{
             taskExecutor={t.taskExecutor}
             cardType={cardType}
             moveTask={moveTask}
+            deleteTask={deleteTask}
+            appTheme={appTheme}
             />
         )
     });
     let tasksIn = tasksList.length;
     return(     
-        <div className={s.column}>
+        <div className={appTheme==="light"?s.column:`${s.column} ${s.d_column}`}>
             <h2 className={s.column__header}>{name} ({tasksIn})</h2>
             {tasksList}
         </div>
