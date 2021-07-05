@@ -45,3 +45,12 @@
 .d_task__button:hover{
     background-color: black;
 }
+@media(max-width:1200px){
+    .task__buttons{
+        flex-direction: column;
+    }
+    .task__button{
+        width: 100%;
+        margin-top: 1em;
+    }
+}

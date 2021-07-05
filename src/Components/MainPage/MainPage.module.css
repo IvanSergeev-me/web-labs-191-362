@@ -4,13 +4,18 @@
     margin: 5% 0;
     padding: 0 10%;
     flex-wrap: wrap;
+    background-color: rgba(255, 250, 250, 0.911);
+}
+.d_columns{
+  background-color: rgba(51, 51, 51, 1);
 }
 .mainPage{
+  height: 100%;
   background-color: rgba(255, 250, 250, 0.911);
-  height: 100vh;
+
 }
 .d_mainPage{
-  background-color: rgba(51, 51, 51, 0.911);
+  background-color: rgba(51, 51, 51, 1);
 }
   @media (max-width:1300px) {
     .column{

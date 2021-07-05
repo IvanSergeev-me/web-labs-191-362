@@ -27,7 +27,12 @@ html,body{
   font-family: 'Roboto', sans-serif!important;
 }
 input,button,textarea{font-family:inherit;}
-
+#root{
+	height: 100%;
+}
+.App{
+	height: 100%;
+}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
 button::-moz-focus-inner {padding:0;border:0;}
