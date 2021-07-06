@@ -16,18 +16,24 @@ const CanbanCard = (props) =>{
     let deleteTask = (taskId) =>{
         props.deleteTask(id, taskId)
     }
+    let showEditMode = (taskData) =>{
+        //console.log(taskData);
+        props.showEditMode(taskData)
+    }
     let tasksList = tasks.map(t=>{
         return(
             <CardTask
-            key={t.id}
-            id={t.id} 
-            taskText={t.taskText}
-            taskCreationDate={t.taskCreationDate}
-            taskExecutor={t.taskExecutor}
-            cardType={cardType}
-            moveTask={moveTask}
-            deleteTask={deleteTask}
-            appTheme={appTheme}
+                key={t.id}
+                id={t.id} 
+                taskText={t.taskText}
+                taskCreationDate={t.taskCreationDate}
+                taskExecutor={t.taskExecutor}
+                cardType={cardType}
+                moveTask={moveTask}
+                deleteTask={deleteTask}
+                appTheme={appTheme}
+                showEditMode={showEditMode}
+                cardId = {id}
             />
         )
     });

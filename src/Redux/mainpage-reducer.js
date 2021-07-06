@@ -1,6 +1,7 @@
 const ADD_TASK = "ADD_TASK";
 const DELETE_TASK = "DELETE_TASK";
 const MOVE_TASK = "MOVE_TASK";
+const EDIT_TASK = "EDIT_TASK";
 const SWITCH_THEME = "SWITCH_THEME";
 /*
  tasks:[
@@ -114,10 +115,7 @@ const mainpageReducer = (state = initialState, action ) =>{
                     return o;
                   }
             )
-            console.log(movedTask)
-          
                 return{
-                
                     ...state,
                     cardsInfo: newCardsInfo
                 }
@@ -128,11 +126,35 @@ const mainpageReducer = (state = initialState, action ) =>{
                 appTheme:state.appTheme==="light"?state.appTheme="dark":state.appTheme="light"
             }
         }
+        case EDIT_TASK:{
+            //console.log(action.values);
+            //console.log(action.taskData);
+            let cardId = action.taskData.cardId;
+            let taskId = action.taskData.id;
+            let newText = action.values.newText;
+            //let selectStatus = values.selectStatus;
+            let executor = action.values.executor;
+            let taskToEdit = state.cardsInfo[cardId].tasks.filter(task => task.id == taskId)[0];
+            if(newText) taskToEdit.taskText = newText;
+            if(executor) taskToEdit.taskExecutor = executor;
+            let newTasks = state.cardsInfo[cardId].tasks.map(task=>{if (task.id === taskToEdit.id) {return taskToEdit;}return task;});
+            //console.log("tte")
+            //console.log(taskToEdit)
+            //console.log("nwtsks")
+            //console.log(newTasks)
+            let newCardInfo = {...state.cardsInfo[cardId], tasks:newTasks}
+            let newCardsInfo = state.cardsInfo.map(o => {if (o.id === newCardInfo.id) {return newCardInfo;}return o;});
+            return{
+                ...state,
+                cardsInfo: newCardsInfo
+            }
+        }
         default: return state; 
         //state.cardsInfo[0].tasks=[...state.cardsInfo[0].tasks, {id:0, taskText:"aa",  taskCreationDate:"--/--/--", taskExecutor:"ivan"}]
     };
 };
 const addTask = (text, date, executor) => ({type:ADD_TASK, text, date, executor});
+const editTask = (values, taskData) => ({type:EDIT_TASK, values, taskData});
 const deleteTask = (cardId, taskId) => ({type:DELETE_TASK, cardId, taskId});
 const moveTask = (id, idToMove, taskId) =>({type:MOVE_TASK,id, idToMove, taskId});
 const switchThemeAC = () =>({type:SWITCH_THEME});
@@ -156,6 +178,27 @@ export const moveTaskThunk = (id, idToMove, taskId) =>{
 export const switchThemeThunk = () =>{
     return(dispatch) =>{
         dispatch(switchThemeAC());       
+    }
+}
+export const editTaskThunk = (values, taskData) =>{
+    return(dispatch) =>{
+        let cardIdToMove;
+        let currentCardId = taskData.cardId;
+        switch(values.selectStatus){
+            case "inPlan":{ cardIdToMove = 0; ; break;}
+            case "inProcess":{ cardIdToMove = 1;break;}
+            case "ready": {cardIdToMove = 2; break;}
+        }
+        if(cardIdToMove == undefined || cardIdToMove===currentCardId){
+            dispatch(editTask(values, taskData));
+        }
+        else{
+            //console.log("aaa")
+            dispatch(editTask(values, taskData));
+            dispatch(moveTask(currentCardId, cardIdToMove, taskData.id));
+            dispatch(deleteTask(currentCardId, taskData.id));
+        }
+           
     }
 }
 export default  mainpageReducer;

@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import s from './MainPage.module.css';
 import CanbanCard from './CanbanCard/CanbanCard';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
-import { addTaskThunk,moveTaskThunk ,deleteTaskThunk, switchThemeThunk } from '../../Redux/mainpage-reducer';
+import { addTaskThunk,moveTaskThunk ,deleteTaskThunk, switchThemeThunk,editTaskThunk } from '../../Redux/mainpage-reducer';
+import Popup from './Popup/Popup';
 
 const MainPage = (props) =>{
     let moveTask = (id , cardIdToMove, taskId) =>{
@@ -11,6 +12,15 @@ const MainPage = (props) =>{
     }
     let deleteTask = (id ,  taskId) =>{
         props.deleteTask(id,  taskId);
+    }
+    let [needShowPopup, setShow] = useState(false);
+    let [popupData, setPopupData] = useState({id:null, taskText:"", status:"",taskExecutor:"", taskCreationDate:"", cardId:null})
+    let showEditMode = (taskData) =>{
+        setPopupData(taskData);
+        setShow(true);
+    }
+    let closePopup = () =>{
+        setShow(false);
     }
     let cardsList = props.cardsInfo.map(c=>{
         return(
@@ -24,17 +34,18 @@ const MainPage = (props) =>{
             moveTask={moveTask}
             deleteTask={deleteTask}
             appTheme={props.appTheme}
-            
+            showEditMode={showEditMode}     
             />
         )
     });
-    
+   
     return(
         <div className={props.appTheme==="light"?s.mainPage:`${s.mainPage} ${s.d_mainPage}`}>
             <Header appTheme={props.appTheme} addTask={props.addTask} switchTheme={props.switchTheme}/>
             <div className={props.appTheme==="light"?s.columns:`${s.columns} ${s.d_columns}`}>
                {cardsList}
             </div>
+            <Popup isLightTheme={props.appTheme==="light"} editCard={props.editCard} needShow={needShowPopup} closePopup={closePopup} popupData={popupData}/>
         </div>
     );
 
@@ -45,14 +56,18 @@ class CanbanCardClass extends React.Component{
         super(props);
     }
     addTask = (text) =>{
-        let currentdate = new Date();
-        let dateTime = currentdate.getDate() + "/"
-        + (currentdate.getMonth()+1)  + "/" 
-        + currentdate.getFullYear() + " "  
-        + currentdate.getHours() + ":"  
-        + currentdate.getMinutes() + ":" 
-        + currentdate.getSeconds();
-        this.props.addTaskThunk(text, dateTime, "ivan");
+        if(text){
+            let currentdate = new Date();
+            let dateTime = currentdate.getDate() + "/"
+            + (currentdate.getMonth()+1)  + "/" 
+            + currentdate.getFullYear() + " "  
+            + currentdate.getHours() + ":"  
+            + currentdate.getMinutes() + ":" 
+            + currentdate.getSeconds();
+            this.props.addTaskThunk(text, dateTime, "ivan");
+        }
+        else alert("Заполните описание");
+        
     }
     moveTask = (id , cardIdToMove, taskId) =>{
         this.props.moveTaskThunk(id , cardIdToMove, taskId);
@@ -63,10 +78,13 @@ class CanbanCardClass extends React.Component{
     switchTheme = () =>{
         this.props.switchThemeThunk();
     }
+    editTask = (values, taskData) =>{
+        this.props.editTaskThunk(values, taskData);
+    }
     render(){
         let appTheme = this.props.mainPage.appTheme;
         return(
-            <MainPage appTheme={appTheme} switchTheme={this.switchTheme}  deleteTask={this.deleteTask} cardsInfo={this.props.mainPage.cardsInfo} addTask={this.addTask} moveTask={this.moveTask}/>
+            <MainPage editCard={this.editTask} appTheme={appTheme} switchTheme={this.switchTheme}  deleteTask={this.deleteTask} cardsInfo={this.props.mainPage.cardsInfo} addTask={this.addTask} moveTask={this.moveTask}/>
         );
     }
 
@@ -74,4 +92,4 @@ class CanbanCardClass extends React.Component{
 let mapStateToProps = (state) =>({
     mainPage: state.mainPage
 })
-export default connect(mapStateToProps, {addTaskThunk,moveTaskThunk ,deleteTaskThunk,switchThemeThunk})(CanbanCardClass);
+export default connect(mapStateToProps, {addTaskThunk,moveTaskThunk ,deleteTaskThunk,switchThemeThunk,editTaskThunk})(CanbanCardClass);

@@ -14,6 +14,11 @@ const CardTask = (props) =>{
         props.deleteTask(props.id);
         e.preventDefault();
     }
+    let showEditMode = (e)=>{
+        let taskData = {id:props.id, taskText:props.taskText, status:props.cardType, taskExecutor:props.taskExecutor, taskCreationDate:props.taskCreationDate, cardId:props.cardId};
+        props.showEditMode(taskData);
+        e.preventDefault();
+    }
     
     return(
         <div className={isLight?s.task:`${s.task} ${s.d_task}`}>
@@ -28,7 +33,7 @@ const CardTask = (props) =>{
                 </div>:null}
             </div>
             <div className={isLight?s.task__buttons:`${s.task__buttons} ${s.d_task__buttons}`}>
-                <button className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Редактировать</button>
+                <button onClick={showEditMode} className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Редактировать</button>
                 {props.cardType==="ready"?<button onClick={deleteTask} className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Удалить</button>:
                 <button onClick={moveTask} className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Готово</button>}
             </div>
