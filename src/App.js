@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import MainPage from './Components/MainPage/MainPage';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-     dw
-    </div>
-  );
+class App extends React.Component{
+  render(){
+      return (
+        <div className="App">
+          <MainPage />
+        </div>
+      );
+  }
+  
 }
 
 export default App;

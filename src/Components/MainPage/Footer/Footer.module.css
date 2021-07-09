@@ -1,0 +1,29 @@
+.footer{
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 0;
+}
+.footer__fio{
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+}
+.footer__group{
+    color: black;
+    font-size: 1em;
+   
+}
+.footer__date{
+    color: gray;
+    font-size: 1em;
+   text-decoration: underline;
+}
+.d_footer{
+    color: white!important;
+}
+.d_footer__group{
+    color: white;
+}
+.d_footer__fio{
+    color: white;
+}

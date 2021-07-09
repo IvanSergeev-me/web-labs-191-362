@@ -1,0 +1,109 @@
+
+  .popup_wrapper{
+    top:0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 5;
+  }
+  .popup {
+    border: 1px black solid;
+    border-radius: 15px;
+    width: 40%;
+    min-width: 300px;
+    background-color: white;
+    
+  }
+  .d_popup{
+      background-color: rgb(32, 32, 32);
+  }
+  .popup__top {
+    display: flex;
+    justify-content: flex-end;
+    margin: 4%;
+  }
+  .popup__top button {
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border-color: rgba(0, 128, 255, 0.795);
+    background-color: rgba(0, 128, 255, 0.795);
+    color: #fff;
+  }
+  .popup__top button:hover {
+    background-color: #077ff8;
+  }
+  .popup__field {
+    text-align: left;
+    margin: 2% 20%;
+    
+  }
+  .popup__field select{
+      width: 100%;
+      color: #077ff8;
+      padding: 1em;
+      border: 1px solid rgba(0, 128, 255, 0.795);
+      box-sizing: border-box;
+  }
+ .popup__field input, .popup__field button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #077ff8;
+    padding: 1em;
+    border: 1px solid rgba(0, 128, 255, 0.795);
+  }
+  .popup__field label {
+    font-weight: bold;
+    margin-bottom: 1%;
+  }
+  .popup__field input {
+    height: 2.2em;
+    background-color: rgba(30, 143, 255, 0.15);
+  }
+  .popup__field button {
+    cursor: pointer;
+    margin-top: 8%;
+    background-color: rgba(0, 128, 255, 0.795);
+    color: #fff;
+  }
+  .popup__field button:hover {
+    background-color: #077ff8;
+  }/*# sourceMappingURL=popup.css.map */
+  .d_popup__field input, .d_popup__field button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    padding: 1em;
+    border: 1px solid black;
+  }
+  .d_popup__field label {
+    font-weight: bold;
+    margin-bottom: 1%;
+    color: white;
+  }
+  .d_popup__field button {
+    cursor: pointer;
+    margin-top: 8%;
+    background-color: black;
+    color: #fff;
+  }
+  .d_popup__field button:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .d_popup__field select{
+    width: 100%;
+    color: white;
+    background-color: rgba(30, 143, 255, 0.65);
+    padding: 1em;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
