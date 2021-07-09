@@ -10,15 +10,8 @@ const CanbanCard = (props) =>{
     let name = props.name;
     let appTheme = props.appTheme;
     //className={props.appTheme==="light"?s.mainPage:`${s.mainPage} ${s.d_mainPage}`
-    let moveTask = (cardIdToMove, taskId) =>{
-        props.moveTask(id, cardIdToMove, taskId)
-    }
     let deleteTask = (taskId) =>{
         props.deleteTask(id, taskId)
-    }
-    let showEditMode = (taskData) =>{
-        //console.log(taskData);
-        props.showEditMode(taskData)
     }
     let tasksList = tasks.map(t=>{
         return(
@@ -27,12 +20,9 @@ const CanbanCard = (props) =>{
                 id={t.id} 
                 taskText={t.taskText}
                 taskCreationDate={t.taskCreationDate}
-                taskExecutor={t.taskExecutor}
                 cardType={cardType}
-                moveTask={moveTask}
                 deleteTask={deleteTask}
                 appTheme={appTheme}
-                showEditMode={showEditMode}
                 cardId = {id}
             />
         )

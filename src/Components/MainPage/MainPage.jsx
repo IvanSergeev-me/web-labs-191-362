@@ -8,16 +8,12 @@ import Footer from './Footer/Footer';
 import Popup from '../Popup/Popup.jsx';
 
 const MainPage = (props) =>{
-    let moveTask = (id , cardIdToMove, taskId) =>{
-        props.moveTask(id, cardIdToMove, taskId);
-    }
     let deleteTask = (id ,  taskId) =>{
         props.deleteTask(id,  taskId);
     }
     let [needShowPopup, setShow] = useState(false);
-    let [popupData, setPopupData] = useState({id:null, taskText:"", status:"",taskExecutor:"", taskCreationDate:"", cardId:null})
-    let showEditMode = (e,taskData) =>{
-        setPopupData(taskData);
+    let showEditMode = (e) =>{
+      
         setShow(true);
         e.preventDefault();
     }
@@ -34,10 +30,8 @@ const MainPage = (props) =>{
             tasksIn={c.tasksIn}
             tasks={c.tasks}
             name={c.name}
-            moveTask={moveTask}
             deleteTask={deleteTask}
-            appTheme={props.appTheme}
-            showEditMode={showEditMode}     
+            appTheme={props.appTheme}   
             />
         )
     });
@@ -53,7 +47,7 @@ const MainPage = (props) =>{
                {cardsList}
             </div>
            <Footer isLightTheme={isLightTheme}/>
-           <Popup isLightTheme={props.appTheme==="light"} addCard={props.addCard} needShow={needShowPopup} closePopup={closePopup} popupData={popupData}/>
+           <Popup isLightTheme={props.appTheme==="light"} addCard={props.addCard} needShow={needShowPopup} closePopup={closePopup} />
         </div>
     );
 
@@ -63,8 +57,8 @@ class CanbanCardClass extends React.Component{
     constructor(props){
         super(props);
     }
-    addTask = (text) =>{
-        if(text){
+    addTask = (values) =>{
+       if(values.newText && values.selectStatus){
             let currentdate = new Date();
             let dateTime = currentdate.getDate() + "/"
             + (currentdate.getMonth()+1)  + "/" 
@@ -72,13 +66,10 @@ class CanbanCardClass extends React.Component{
             + currentdate.getHours() + ":"  
             + currentdate.getMinutes() + ":" 
             + currentdate.getSeconds();
-            this.props.addTaskThunk(text, dateTime, "ivan");
+            this.props.addTaskThunk(values, dateTime);
         }
         else alert("Заполните описание");
         
-    }
-    moveTask = (id , cardIdToMove, taskId) =>{
-        this.props.moveTaskThunk(id , cardIdToMove, taskId);
     }
     deleteTask = (cardId, taskId) =>{
         this.props.deleteTaskThunk(cardId, taskId)
@@ -86,13 +77,10 @@ class CanbanCardClass extends React.Component{
     switchTheme = () =>{
         this.props.switchThemeThunk();
     }
-    addTask = (values, taskData) =>{
-        //this.props.editTaskThunk(values, taskData);
-    }
     render(){
         let appTheme = this.props.mainPage.appTheme;
         return(
-            <MainPage addCard={this.addTask} appTheme={appTheme} switchTheme={this.switchTheme}  deleteTask={this.deleteTask} cardsInfo={this.props.mainPage.cardsInfo} addTask={this.addTask} moveTask={this.moveTask}/>
+            <MainPage addCard={this.addTask} appTheme={appTheme} switchTheme={this.switchTheme}  deleteTask={this.deleteTask} cardsInfo={this.props.mainPage.cardsInfo} />
         );
     }
 
@@ -100,5 +88,5 @@ class CanbanCardClass extends React.Component{
 let mapStateToProps = (state) =>({
     mainPage: state.mainPage
 })
-export default connect(mapStateToProps, {addTaskThunk,moveTaskThunk ,deleteTaskThunk,switchThemeThunk,editTaskThunk})(CanbanCardClass);
+export default connect(mapStateToProps, {addTaskThunk ,deleteTaskThunk,switchThemeThunk})(CanbanCardClass);
 // 

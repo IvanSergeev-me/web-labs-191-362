@@ -4,19 +4,17 @@ import { Field, reduxForm } from 'redux-form';
 
 let Popup = (props) =>{
     let [isShown,setShow] = useState(props.needShow);
-    let [currentData, setData] = useState(props.popupData);
     useEffect(()=>{
         setShow(props.needShow);
-        setData(props.popupData);
-    },[props.needShow, props.popupData]);
+      
+    },[props.needShow]);
     let closePopup = (e) =>{
         props.closePopup();
         e.preventDefault();
     }
     let isLightTheme = props.isLightTheme;
     let onSubmit = (values) =>{
-      // console.log(values);
-       props.addCard(values, currentData);
+       props.addCard(values);
        props.closePopup();
     }
     if(isShown){
@@ -27,7 +25,7 @@ let Popup = (props) =>{
                     <div className={s.popup__top}>
                         <button onClick={closePopup}>X</button>
                     </div>
-                    <EditCardForm onSubmit={onSubmit} isLightTheme={isLightTheme} currentData={currentData}/>     
+                    <EditCardForm onSubmit={onSubmit} isLightTheme={isLightTheme}/>     
                 </div>
         </div>
         )
