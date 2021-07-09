@@ -13,8 +13,11 @@
     justify-content: center;
   }
   .theme__text {
-    color: #9b9999;
+    color: blue;
     font-size: 1.2em;
+  }
+  .d_theme__text{
+    color:white;
   }
 .top__logo_name{
   width: 20%;

@@ -3,8 +3,8 @@ import s from './Header.module.css';
 import logo from './logo.webp';
 
 const Header = (props) =>{
-    //let appTheme = props.appTheme;
-    //let isLight = appTheme ==="light";
+    let appTheme = props.appTheme;
+    let isLight = appTheme ==="light";
     //className={appTheme==="light"?s.column:`${s.column} ${s.d_column}`
     let changeTheme = (e)=>{
        
@@ -22,7 +22,7 @@ const Header = (props) =>{
                     <span className={s.top__name}>SERGEEV</span>
                 </div>
                 <div className={s.top__theme}>
-                    <label htmlFor="switch" className={s.theme__text}>Темная тема</label>
+                    <label htmlFor="switch"className={isLight?s.theme__text:`${s.theme__text} ${s.d_theme__text}`}>Темная тема</label>
                     <input onChange={changeTheme} type="checkbox" id="switch" name="theme" />
                  </div>
             </div>

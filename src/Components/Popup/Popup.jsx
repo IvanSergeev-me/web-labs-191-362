@@ -26,7 +26,8 @@ let Popup = (props) =>{
             <div className={s.popup_wrapper}>
                 <div className={isLightTheme?s.popup:`${s.popup} ${s.d_popup}`}>
                     <div className={s.popup__top}>
-                        <button onClick={closePopup}>X</button>
+                        <label htmlFor="close"className={isLightTheme?s.theme__text:`${s.theme__text} ${s.d_theme__text}`}>Закрыть</label>
+                        <button name="close" onClick={closePopup}>X</button>
                     </div>
                     <EditCardForm onSubmit={onSubmit} isLightTheme={isLightTheme}/>     
                 </div>
