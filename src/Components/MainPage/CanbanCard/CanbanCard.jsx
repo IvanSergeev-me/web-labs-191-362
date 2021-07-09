@@ -9,7 +9,6 @@ const CanbanCard = (props) =>{
     let tasks=props.tasks;
     let name = props.name;
     let appTheme = props.appTheme;
-    //className={props.appTheme==="light"?s.mainPage:`${s.mainPage} ${s.d_mainPage}`
     let deleteTask = (taskId) =>{
         props.deleteTask(id, taskId)
     }

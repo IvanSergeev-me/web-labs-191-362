@@ -3,7 +3,7 @@ import s from './MainPage.module.css';
 import CanbanCard from './CanbanCard/CanbanCard';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
-import { addTaskThunk,moveTaskThunk ,deleteTaskThunk, switchThemeThunk,editTaskThunk } from '../../Redux/mainpage-reducer';
+import { addTaskThunk,deleteTaskThunk, switchThemeThunk } from '../../Redux/mainpage-reducer';
 import Footer from './Footer/Footer';
 import Popup from '../Popup/Popup.jsx';
 

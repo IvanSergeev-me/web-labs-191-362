@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import s from './Popup.module.css';
 import { Field, reduxForm } from 'redux-form';
+import {requiredField} from '../../Forms/validator.js';
+import { Input } from '../../Forms/input.js';
 
 let Popup = (props) =>{
     let [isShown,setShow] = useState(props.needShow);
+
     useEffect(()=>{
         setShow(props.needShow);
-      
     },[props.needShow]);
+   
     let closePopup = (e) =>{
         props.closePopup();
         e.preventDefault();
@@ -17,8 +20,8 @@ let Popup = (props) =>{
        props.addCard(values);
        props.closePopup();
     }
-    if(isShown){
-        
+
+    if(isShown){      
         return(
             <div className={s.popup_wrapper}>
                 <div className={isLightTheme?s.popup:`${s.popup} ${s.d_popup}`}>
@@ -27,31 +30,38 @@ let Popup = (props) =>{
                     </div>
                     <EditCardForm onSubmit={onSubmit} isLightTheme={isLightTheme}/>     
                 </div>
-        </div>
+            </div>
         )
     }
     else return <></>
 }
 let EditForm = (props) =>{
     let isLightTheme=props.isLightTheme;
+    let [text, setText] = useState("");
+    let changeText = (e) =>{
+        setText(e.currentTarget.value);
+        console.log(needDisable);
+    }
+    let needDisable = true;
+    if (text) needDisable = false;
     return(
         <form onSubmit={props.handleSubmit} className={s.popup__body}>
                         
         <div className={isLightTheme?s.popup__field:`${s.popup__field} ${s.d_popup__field}`}>
-            <label htmlFor="newtext">Описание</label>
-            <Field name="newText" component={"input"}  type="text"/>
+            <label htmlFor="newText">Описание</label>
+            <Field onChange={changeText} validate={requiredField} name="newText" component={Input}  type="text"/>
         </div>
         
         <div className={isLightTheme?s.popup__field:`${s.popup__field} ${s.d_popup__field}`}>
-            <label for="status">Статус</label>
-            <Field name="selectStatus" component={"select"}>
+            <label htmlFor="status">Статус</label>
+            <Field validate={requiredField} name="selectStatus" component={"select"}>
                 <option component={"option"} value="important1">Не важно</option>
                 <option component={"option"} value="important2">Стоит сделать</option>
                 <option component={"option"} value="important3">Важно</option>
             </Field>
         </div>
         <div className={isLightTheme?s.popup__field:`${s.popup__field} ${s.d_popup__field}`}>
-            <button type="submit" >Завершить</button>
+            <button disabled={needDisable} className={needDisable?s.disabledButton:""} type="submit" >Завершить</button>
         </div>
     </form>
     );

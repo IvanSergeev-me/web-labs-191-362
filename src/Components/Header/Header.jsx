@@ -3,8 +3,8 @@ import s from './Header.module.css';
 import logo from './logo.webp';
 
 const Header = (props) =>{
-    let appTheme = props.appTheme;
-    let isLight = appTheme ==="light";
+    //let appTheme = props.appTheme;
+    //let isLight = appTheme ==="light";
     //className={appTheme==="light"?s.column:`${s.column} ${s.d_column}`
     let changeTheme = (e)=>{
        

@@ -19,7 +19,7 @@ const CardTask = (props) =>{
                 </div>
             </div>
             <div className={isLight?s.task__buttons:`${s.task__buttons} ${s.d_task__buttons}`}>
-                <button onClick={deleteTask} className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Удалить</button>
+                <button tabIndex="1" onClick={deleteTask} className={isLight?s.task__button:`${s.task__button} ${s.d_task__button}`}>Удалить</button>
             </div>
         </div>
     )

@@ -1,0 +1,7 @@
+
+.error_message{
+    color:rgb(255, 27, 27);
+}
+.login_form__input_error{
+    border: 1px solid rgb(255, 27, 27)!important;
+}
